@@ -1,0 +1,10 @@
+
+/**
+    User new account
+*/
+.user-new-content-body .page-content-table {
+    overflow-x: hidden;
+}
+.user-new-content-body .nav-tabs-vertical .nav-tabs {
+    width: 100%;
+}

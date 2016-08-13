@@ -1,0 +1,10 @@
+.page-login:before {
+    background-image: url("../../example-images/login_bg.jpg");
+}
+
+.fv-form-bootstrap .help-block {
+    margin-bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}

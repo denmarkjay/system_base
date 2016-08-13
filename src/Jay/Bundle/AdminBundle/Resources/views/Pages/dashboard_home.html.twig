@@ -1,0 +1,58 @@
+{% extends "base.html.twig" %}
+{% import "JayAdminBundle:Assets:js_vars.html.twig" as js_bundle %}
+{% import "JayAdminBundle:Assets:css_vars.html.twig" as css_bundle %}
+{% set user = 'jay' %}
+
+{% block body %}
+    {% embed "JayAdminBundle:Templates:main_topnav.html.twig" %}{% endembed %}
+    {% embed "JayAdminBundle:Templates:main_sidebar.html.twig" %}{% endembed %}
+    {% embed "JayAdminBundle:Templates:main_sitegrid.html.twig" %}{% endembed %}
+
+    {% embed "JayAdminBundle:Templates:main_pagecontent.html.twig" %}
+        {% set page_header_title = "Dashboard" %}
+
+        {% block page_content_panel_body %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+
+
+{# -- STYLES -----------------------------------#}
+{% block stylesheets %}
+    {#-- page --#}
+    {% set page_css %}
+{{ css_bundle.css_get_pages(['']) }}
+    {% endset %}
+    {#-- override --#}
+    {% set css_override %}
+{{ css_bundle.css_get_overrides(['']) }}
+    {% endset %}
+    {#-- plugins --#}
+    {% set css_plugin %}
+{{ css_bundle.css_get_plugins(['tablesaw', 'slide-panel']) }}
+    {% endset %}
+{{ include("JayAdminBundle:Assets:all_admin_css.html.twig") }}
+{% endblock %}
+
+{# -- JAVASCRIPT -----------------------------------#}
+{% block javascripts %}
+    {#-- pages --#}
+    {% set pages_js %}
+{{ js_bundle.js_get_pages(['']) }}
+    {% endset %}
+    {#-- plugins --#}
+    {% set plugin_js %}
+{{ js_bundle.js_get_plugins(['tablesaw', 'jquery-aspaginator']) }}
+    {% endset %}
+    {#-- scripts --#}
+    {% set scripts_js %}
+{{ js_bundle.js_get_scripts(['sticky-header', 'aspaginator']) }}
+    {% endset %}
+{{ include("JayAdminBundle:Assets:all_admin_js.html.twig") }}
+    <script>
+        $('#samplealert').on("click", function() {
+
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,302 @@
+{% extends "base.html.twig" %}
+{% import "JayAdminBundle:Assets:js_vars.html.twig" as js_bundle %}
+{% import "JayAdminBundle:Assets:css_vars.html.twig" as css_bundle %}
+{% set user = 'jay' %}
+
+{% block body %}
+    {% embed "JayAdminBundle:Templates:main_topnav.html.twig" %}{% endembed %}
+    {% embed "JayAdminBundle:Templates:main_sidebar.html.twig" %}{% endembed %}
+    {% embed "JayAdminBundle:Templates:main_sitegrid.html.twig" %}{% endembed %}
+
+    {% embed "JayAdminBundle:Templates:main_pagecontent.html.twig" %}
+        {% set page_header_title, page_content_header_title = "New User", " " %}
+
+        {% block page_content_panel_body %}
+
+            <!-- Example Nav Tabs Vertical -->
+            <div class="row user-new-content-body">
+                <div class="col-md-2">
+                    <div class="nav-tabs-vertical text-center">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#tab-basic-info"><i
+                                            class="fa fa-user"></i><br>Basic</a>
+                            </li>
+                            <li><a data-toggle="tab" href="#tab-company"><i class="fa fa-building"></i><br>Company</a></li>
+                            {#<li><a data-toggle="tab" href="#forum-answer">Css</a></li>#}
+                            {#<li><a data-toggle="tab" href="#forum-answer">Css</a></li>#}
+                            {#<li><a data-toggle="tab" href="javascript:void(0)">Javascript</a></li>#}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <form class="text-left form-user-add" name="form-me">
+                        <div class="page-content tab-content page-content-table">
+                            <div class="tab-pane active" id="tab-basic-info" role="tabpanel">
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group form-material floating">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                  <i class="icon wb-pencil" aria-hidden="true"></i>
+                                                </span>
+                                                <input type="text" class="form-control" name="fname"
+                                                       autocomplete="off" required />
+                                                <label class="floating-label-static">First Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group form-material floating">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                  <i class="icon wb-pencil" aria-hidden="true"></i>
+                                                </span>
+                                                <input type="text" class="form-control" name="mname"
+                                                       autocomplete="off" />
+                                                <label class="floating-label-static">Middle Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group form-material floating">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                  <i class="icon wb-pencil" aria-hidden="true"></i>
+                                                </span>
+                                                <input type="text" class="form-control" name="lname"
+                                                       autocomplete="off" required />
+                                                <label class="floating-label-static">Last Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-material floating">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                      <i class="icon wb-user" aria-hidden="true"></i>
+                                                    </span>
+                                                <select class="form-control" name="gender" required >
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                                <label class="floating-label-static">Gender</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-material floating">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                  <i class="icon wb-calendar" aria-hidden="true"></i>
+                                                </span>
+                                                <input onkeydown="return event.keyCode >= 48 && event.keyCode <= 50;"
+                                                       type="text" name="birthdate" class="form-control"
+                                                       data-plugin="datepicker">
+                                                <label class="floating-label-static">Birthdate</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-material floating">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                  <i class="icon wb-envelope" aria-hidden="true"></i>
+                                                </span>
+                                                <input type="email" class="form-control" name="email"
+                                                       autocomplete="off" required />
+                                                <label class="floating-label-static">Email</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-material floating">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                  <i class="icon wb-mobile" aria-hidden="true"></i>
+                                                </span>
+                                                <input type="text" class="form-control" name="phone"
+                                                       autocomplete="off"/>
+                                                <label class="floating-label-static">Phone</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group form-material floating">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                          <i class="icon wb-user" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="text" class="form-control" name="username"
+                                               autocomplete="off" required />
+                                        <label>Username</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-material floating">
+
+                                            <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                      <i class="icon wb-lock" aria-hidden="true"></i>
+                                                    </span>
+                                                <input type="password" class="form-control" name="password"
+                                                       autocomplete="off" required />
+                                                <label>Password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-material floating">
+                                            <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                      <i class="icon wb-lock" aria-hidden="true"></i>
+                                                    </span>
+                                                <input type="password" class="form-control" name="confirmPass"
+                                                       autocomplete="off" required />
+                                                <label>Confirm Password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-material floating">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                          <i class="icon wb-edit" aria-hidden="true"></i>
+                                        </span>
+                                        <textarea class="form-control" name="description"></textarea>
+                                        <label class="floating-label-static">Briefly Describe Yourself.</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="tab-company" role="tabpanel">
+                                {% if _user.userrole == 'SA' %}
+                                <div class="form-group form-material floating">
+                                    <label>Select Company</label>
+                                    <select data-plugin="select2" name="company">
+                                        {% for company in _companies %}
+                                            <option value="{{ company.companykey }}">{{ company.companyname }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                {% else %}
+                                <input type="hidden" name="company" value="{{ _user.getuserCompanyKey() }}">
+                                {% endif %}
+                                <div class="form-group form-material floating">
+                                    <label>User Role</label>
+                                    <select data-plugin="select2" name="role">
+                                        {% for key,role in _app.getVars().userRoles %}
+                                            {% if key == 'SA' and _user.getUserRole() == 'SA' %}
+                                                <option value="{{ key }}">{{ role }}</option>
+                                            {% endif %}
+                                            {% if key != 'SA' %}
+                                                <option value="{{ key }}">{{ role }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success ladda-button pull-right btn-new-user" data-style="zoom-in"
+                                >
+                        <span class="ladda-label">
+                           <i class="icon wb-check-circle margin-right-5" aria-hidden="true"></i>Save
+                        </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+
+
+{# -- STYLES -----------------------------------#}
+{% block stylesheets %}
+    {#-- page --#}
+    {% set page_css %}
+        {{ css_bundle.css_get_pages(['']) }}
+    {% endset %}
+    {#-- override --#}
+    {% set css_override %}
+        {{ css_bundle.css_get_overrides(['pages']) }}
+    {% endset %}
+    {#-- plugins --#}
+    {% set css_plugin %}
+        {{ css_bundle.css_get_plugins(['tablesaw', 'slide-panel', 'bootstrap-datepicker', 'select2', 'ladda', 'toastr']) }}
+    {% endset %}
+    {{ include("JayAdminBundle:Assets:all_admin_css.html.twig") }}
+{% endblock %}
+
+{# -- JAVASCRIPT -----------------------------------#}
+{% block javascripts %}
+    {#-- pages --#}
+    {% set pages_js %}
+        {{ js_bundle.js_get_pages(['form-validate']) }}
+    {% endset %}
+    {#-- plugins --#}
+    {% set plugin_js %}
+        {{ js_bundle.js_get_plugins(['tablesaw', 'jquery-aspaginator', 'bootstrap-datepicker', 'select2', 'ladda-spin','ladda','toastr', 'formValidator']) }}
+    {% endset %}
+    {#-- scripts --#}
+    {% set scripts_js %}
+        {{ js_bundle.js_get_scripts(['sticky-header', 'aspaginator', 'bootstrap-datepicker', 'material', 'select2', 'buttons', 'ladda','toastr']) }}
+    {% endset %}
+    {{ include("JayAdminBundle:Assets:all_admin_js.html.twig") }}
+    <script>
+        var userForm = $('.form-user-add'),
+            param = {},
+            btnSubmit = '.btn-new-user'
+        ;
+
+        init();
+        function init() {
+            $(btnSubmit).attr('disabled', true).addClass('disabled');
+
+            userForm.form_validate( {
+                module: 'new-user',
+                onSuccess: function() {
+                    saveRecord();
+                },
+                form: userForm,
+                btn: btnSubmit
+            });
+
+        }
+
+        function saveRecord() {
+            if(parseInt(userForm.data('onprocess'))) { return false; }
+            else $._formProcess(userForm, 1);
+
+            param = $._getFormData(userForm);
+
+            var l = Ladda.create(document.querySelector( btnSubmit ));
+            l.start();
+
+            MyApp.setUrl('{{ path('jay_payroll_admin_user_add') }}')
+                    .setData(param)
+                    .setDone( function(data) {
+
+                        if(data.success) {
+                            $._showSuccessAlert('user');
+                            $._formProcess(userForm, 0);
+                            $._resetForm(userForm);
+                        }
+                    })
+                    .setAlways( function(data) {
+                        l.stop();
+                    })
+                    .post();
+        }
+    </script>
+{% endblock %}

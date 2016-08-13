@@ -1,0 +1,284 @@
+{% extends "base.html.twig" %}
+{% import "JayAdminBundle:Assets:js_vars.html.twig" as js_bundle %}
+{% import "JayAdminBundle:Assets:css_vars.html.twig" as css_bundle %}
+{% set body_class = 'app-contacts' %}
+
+{% block body %}
+    {% embed "JayAdminBundle:Templates:main_topnav.html.twig" %}{% endembed %}
+    {% embed "JayAdminBundle:Templates:main_sidebar.html.twig" %}{% endembed %}
+    {% embed "JayAdminBundle:Templates:main_sitegrid.html.twig" %}{% endembed %}
+
+    {% embed "JayAdminBundle:Templates:main_pagecontent.html.twig" %}
+        {% set page_header_title, page_main_class = "Users", "page bg-white animsition" %}
+        {% block page_header %}
+            <div class="page-header">
+                <h1 class="page-title">Users</h1>
+                <ol class="breadcrumb">
+                    {% block page_header_breadcrumb %}
+                        <li class="active">Home</li>{% endblock %}
+                </ol>
+                <div class="page-header-actions">
+                    <form>
+                        <div class="input-search input-search-dark">
+                            <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                            <input type="text" class="form-control" name="" placeholder="Search...">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        {% endblock %}
+
+        {% block page_content %}
+            <!-- Contacts Content -->
+            <div class="page-main">
+
+                <!-- Contacts Content -->
+                <div class="page-content page-content-table">
+
+                    <!-- Contacts -->
+                    <table class="table tablesaw" data-tablesaw-mode="stack">
+                        <thead>
+                        <tr>
+                            <th class="cell-60" scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg contacts-select-all select-all">
+                                    <input type="checkbox" class="contacts-checkbox" id="select_all" />
+                                    <label for="select_all"></label>
+                                </div>
+                            </th>
+                            <th class="cell-300" scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">Name</th>
+                            <th class="cell-300" scope="col" data-tablesaw-sortable-col data-tablesaw-priority="3">Phone</th>
+                            <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-url="panel.tpl" data-toggle="slidePanel">
+                            <td class="cell-60 responsive-hide">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg multi-select">
+                                    <input type="checkbox" class="contacts-checkbox" id="contacts_1" />
+                                    <label for="contacts_1"></label>
+                                </div>
+                            </td>
+                            <td class="cell-300">
+                                <a class="avatar" href="javascript:void(0)">
+                                    <img class="img-responsive" src="../../../assets/portraits/1.jpg"
+                                         alt="...">
+                                </a>
+                                Herman Beck
+                            </td>
+                            <td class="cell-300">(119)-298-8025</td>
+                            <td>julio.williamson73@gmail.com</td>
+                        </tr>
+                        <tr data-url="panel.tpl" data-toggle="slidePanel">
+                            <td class="cell-60 responsive-hide">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg multi-select">
+                                    <input type="checkbox" class="contacts-checkbox" id="contacts_2" />
+                                    <label for="contacts_2"></label>
+                                </div>
+                            </td>
+                            <td class="cell-300">
+                                <a class="avatar" href="javascript:void(0)">
+                                    <img class="img-responsive" src="../../../assets/portraits/2.jpg"
+                                         alt="...">
+                                </a>
+                                Mary Adams
+                            </td>
+                            <td class="cell-300">(838)-780-5116</td>
+                            <td>heidi.morrison77@hotmail.com</td>
+                        </tr>
+                        <tr data-url="panel.tpl" data-toggle="slidePanel">
+                            <td class="cell-60 responsive-hide">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg multi-select">
+                                    <input type="checkbox" class="contacts-checkbox" id="contacts_3" />
+                                    <label for="contacts_3"></label>
+                                </div>
+                            </td>
+                            <td class="cell-300">
+                                <a class="avatar" href="javascript:void(0)">
+                                    <img class="img-responsive" src="../../../assets/portraits/3.jpg"
+                                         alt="...">
+                                </a>
+                                Caleb Richards
+                            </td>
+                            <td class="cell-300">(861)-579-6099</td>
+                            <td>raymond.byrd19@aol.com</td>
+                        </tr>
+                        <tr data-url="panel.tpl" data-toggle="slidePanel">
+                            <td class="cell-60 responsive-hide">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg multi-select">
+                                    <input type="checkbox" class="contacts-checkbox" id="contacts_4" />
+                                    <label for="contacts_4"></label>
+                                </div>
+                            </td>
+                            <td class="cell-300">
+                                <a class="avatar" href="javascript:void(0)">
+                                    <img class="img-responsive" src="../../../assets/portraits/4.jpg"
+                                         alt="...">
+                                </a>
+                                June Lane
+                            </td>
+                            <td class="cell-300">(210)-727-1136</td>
+                            <td>eileen.gordon24@yahoo.com</td>
+                        </tr>
+                        <tr data-url="panel.tpl" data-toggle="slidePanel">
+                            <td class="cell-60 responsive-hide">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg multi-select">
+                                    <input type="checkbox" class="contacts-checkbox" id="contacts_5" />
+                                    <label for="contacts_5"></label>
+                                </div>
+                            </td>
+                            <td class="cell-300">
+                                <a class="avatar" href="javascript:void(0)">
+                                    <img class="img-responsive" src="../../../assets/portraits/5.jpg"
+                                         alt="...">
+                                </a>
+                                Edward Fletcher
+                            </td>
+                            <td class="cell-300">(729)-682-8842</td>
+                            <td>jim.hunter32@gmail.com</td>
+                        </tr>
+                        <tr data-url="panel.tpl" data-toggle="slidePanel">
+                            <td class="cell-60 responsive-hide">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg multi-select">
+                                    <input type="checkbox" class="contacts-checkbox" id="contacts_6" />
+                                    <label for="contacts_6"></label>
+                                </div>
+                            </td>
+                            <td class="cell-300">
+                                <a class="avatar" href="javascript:void(0)">
+                                    <img class="img-responsive" src="../../../assets/portraits/6.jpg"
+                                         alt="...">
+                                </a>
+                                Crystal Bates
+                            </td>
+                            <td class="cell-300">(916)-801-4120</td>
+                            <td>zoe.perez69@yahoo.com</td>
+                        </tr>
+                        <tr data-url="panel.tpl" data-toggle="slidePanel">
+                            <td class="cell-60 responsive-hide">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg multi-select">
+                                    <input type="checkbox" class="contacts-checkbox" id="contacts_7" />
+                                    <label for="contacts_7"></label>
+                                </div>
+                            </td>
+                            <td class="cell-300">
+                                <a class="avatar" href="javascript:void(0)">
+                                    <img class="img-responsive" src="../../../assets/portraits/7.jpg"
+                                         alt="...">
+                                </a>
+                                Nathan Watts
+                            </td>
+                            <td class="cell-300">(320)-725-3333</td>
+                            <td>esther.kelly84@hotmail.com</td>
+                        </tr>
+                        <tr data-url="panel.tpl" data-toggle="slidePanel">
+                            <td class="cell-60 responsive-hide">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg multi-select">
+                                    <input type="checkbox" class="contacts-checkbox" id="contacts_8" />
+                                    <label for="contacts_8"></label>
+                                </div>
+                            </td>
+                            <td class="cell-300">
+                                <a class="avatar" href="javascript:void(0)">
+                                    <img class="img-responsive" src="../../../assets/portraits/8.jpg"
+                                         alt="...">
+                                </a>
+                                Heather Harper
+                            </td>
+                            <td class="cell-300">(386)-653-1983</td>
+                            <td>jacob.morgan95@gmail.com</td>
+                        </tr>
+                        <tr data-url="panel.tpl" data-toggle="slidePanel">
+                            <td class="cell-60 responsive-hide">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg multi-select">
+                                    <input type="checkbox" class="contacts-checkbox" id="contacts_9" />
+                                    <label for="contacts_9"></label>
+                                </div>
+                            </td>
+                            <td class="cell-300">
+                                <a class="avatar" href="javascript:void(0)">
+                                    <img class="img-responsive" src="../../../assets/portraits/9.jpg"
+                                         alt="...">
+                                </a>
+                                Willard Wood
+                            </td>
+                            <td class="cell-300">(130)-591-7236</td>
+                            <td>jacob.morgan95@gmail.com</td>
+                        </tr>
+                        <tr data-url="panel.tpl" data-toggle="slidePanel">
+                            <td class="cell-60 responsive-hide">
+                                <div class="checkbox-custom checkbox-primary checkbox-lg multi-select">
+                                    <input type="checkbox" class="contacts-checkbox" id="contacts_10" />
+                                    <label for="contacts_10"></label>
+                                </div>
+                            </td>
+                            <td class="cell-300">
+                                <a class="avatar" href="javascript:void(0)">
+                                    <img class="img-responsive" src="../../../assets/portraits/10.jpg"
+                                         alt="...">
+                                </a>
+                                Ronnie Ellis
+                            </td>
+                            <td class="cell-300">(769)-963-2966</td>
+                            <td>erin.miller29@yahoo.com</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <ul data-plugin="paginator" data-total="50" data-skin="pagination-gap"></ul>
+                </div>
+            </div>
+
+            <!-- Add Mail Form -->
+            <div class="site-action animation-duration-300">
+                <button type="button" class="btn-raised btn btn-success btn-floating">
+                    <i class="front-icon wb-plus animation-scale-up" aria-hidden="true"></i>
+                    <i class="back-icon wb-close animation-scale-up" aria-hidden="true"></i>
+                </button>
+                <div class="site-action-buttons">
+                    <button type="button" class="btn-raised btn btn-success btn-floating animation-slide-bottom animation-delay-100">
+                        <i class="icon wb-trash" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btn-raised btn btn-success btn-floating animation-slide-bottom">
+                        <i class="icon wb-folder" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        {% endblock %}
+
+    {% endembed %}
+{% endblock %}
+
+
+{# -- STYLES -----------------------------------#}
+{% block stylesheets %}
+    {#-- page --#}
+    {% set page_css %}
+{{ css_bundle.css_get_pages(['app-contacts']) }}
+    {% endset %}
+    {#-- override --#}
+    {% set css_override %}
+{{ css_bundle.css_get_overrides(['']) }}
+    {% endset %}
+    {#-- plugins --#}
+    {% set css_plugin %}
+{{ css_bundle.css_get_plugins(['tablesaw', 'slide-panel']) }}
+    {% endset %}
+{{ include("JayAdminBundle:Assets:all_admin_css.html.twig") }}
+{% endblock %}
+
+{# -- JAVASCRIPT -----------------------------------#}
+{% block javascripts %}
+    {#-- pages --#}
+    {% set pages_js %}
+{{ js_bundle.js_get_pages(['']) }}
+    {% endset %}
+    {#-- plugins --#}
+    {% set plugin_js %}
+{{ js_bundle.js_get_plugins(['tablesaw', 'jquery-aspaginator']) }}
+    {% endset %}
+    {#-- scripts --#}
+    {% set scripts_js %}
+{{ js_bundle.js_get_scripts(['sticky-header', 'aspaginator']) }}
+    {% endset %}
+{{ include("JayAdminBundle:Assets:all_admin_js.html.twig") }}
+{% endblock %}

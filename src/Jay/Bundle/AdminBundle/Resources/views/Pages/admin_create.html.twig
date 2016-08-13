@@ -1,0 +1,188 @@
+{% extends "base.html.twig" %}
+{% import "JayAdminBundle:Assets:js_vars.html.twig" as js_bundle %}
+{% import "JayAdminBundle:Assets:css_vars.html.twig" as css_bundle %}
+{% import 'JayAdminBundle:Template_Forms:create_admin_forms.html.twig' as forms %}
+
+{% set body_class = "layout-full" %}
+{% set user_fields, company_fields, security_fields = [
+{name: 'u_fname', label: 'First name', id: 'inputUserFname', col_class:'col-md-6', required: 'required="required"'},
+{name: 'u_lname', label: 'Last name', id: 'inputUserLname', col_class:'col-md-6',  required: 'required="required"'},
+{name: 'u_email', label: 'Email Address', id: 'inputUserEmail', type: 'email', required: 'required="required"'},
+{name: 'u_phone', label: 'Phone', id: 'inputUserPhone'},
+],
+[
+{name: 'c_name', label: 'Company Name', id: 'inputCompanyName', required: 'required="required"'},
+{name: 'c_email', label: 'Email Address', id: 'inputUserEmail', type: 'email'},
+{name: 'c_address', label: 'Address', id: 'inputCompanyAddress'},
+],
+[
+{name: 'ul_login', label: 'Username', id: 'inputUserLogin', required: 'required="required"'},
+{name: 'ul_pass', label: 'Password', id: 'inputUserPass', type: 'password', required: 'required="required"'},
+{name: 'ul_pass2', label: 'Confirm password', id: 'inputUserConfirmPass', type: 'password', required: 'required="required"'},
+] %}
+
+{% block body %}
+    <!-- Page -->
+    <div class="page animsition">
+        <div class="page-header">
+            <h1 class="page-title">ADMINISTRATOR</h1>
+            <ol class="breadcrumb">
+                <li class="active">Setup your administrator account.</li>
+            </ol>
+        </div>
+        <div class="page-content container-fluid">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <!-- Panel Wizard Form -->
+                    <div class="panel" id="exampleWizardForm" data-url="{{ path('jay_payroll_admin_setup_account') }}">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Wizard Form</h3>
+                        </div>
+                        <div class="panel-body">
+                            <!-- Steps -->
+                            <div class="pearls row">
+                                <div class="pearl current col-xs-3">
+                                    <div class="pearl-icon"><i class="icon wb-home" aria-hidden="true"></i></div>
+                                    <span class="pearl-title">Company</span>
+                                </div>
+                                <div class="pearl col-xs-3">
+                                    <div class="pearl-icon"><i class="icon wb-user" aria-hidden="true"></i></div>
+                                    <span class="pearl-title">Account Info</span>
+                                </div>
+                                <div class="pearl col-xs-3">
+                                    <div class="pearl-icon"><i class="icon wb-lock" aria-hidden="true"></i></div>
+                                    <span class="pearl-title">Security</span>
+                                </div>
+                                <div class="pearl col-xs-3">
+                                    <div class="pearl-icon"><i class="icon wb-check" aria-hidden="true"></i></div>
+                                    <span class="pearl-title">Done</span>
+                                </div>
+                            </div>
+                            <!-- End Steps -->
+
+                            <!-- Wizard Content -->
+                            <div class="wizard-content">
+
+                                <!-- Company -->
+                                <div class="wizard-pane active" id="accountCompany" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            <form id="accountCompanyForm">
+                                                {% for field in company_fields %}
+                                                    {{ forms.input(field) }}
+                                                {% endfor %}
+                                            </form>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+                                </div>
+
+                                <!-- User Information -->
+                                <div class="wizard-pane" id="accountInfo" role="tabpanel">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">
+                                        <form id="accountInfoForm">
+                                            {% for field in user_fields %}
+                                                {{ forms.input(field) }}
+                                            {% endfor %}
+                                        </form>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+
+                                <!-- User Security -->
+                                <div class="wizard-pane" id="accountSecurity" role="tabpanel">
+                                    <form id="accountSecurityForm">
+                                        <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-10">
+                                                {% for field in security_fields %}
+                                                    {{ forms.input(field) }}
+                                                {% endfor %}
+                                            </div>
+                                            <div class="col-md-1"></div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- Confirm -->
+                                <div class="wizard-pane" id="accountSecurity" role="tabpanel">
+                                    <div class="text-center margin-vertical-50" id="successAlert">
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                                <div class="height-50 vertical-align text-center" id="wizardLoader"
+                                                     style="display:none;">
+                                                    <div class="loader vertical-align-middle loader-ellipsis"
+                                                         data-type="default"></div>
+                                                </div>
+                                                <div class="text-center margin-vertical-20  wizardMessage">
+                                                    <i class="icon wb-check font-size-40" aria-hidden="true"></i>
+                                                    <h4>Your account is almost ready.</h4>
+
+                                                    <h2>Click Finish to start!</h2>
+                                                </div>
+                                                <h4>
+                                                    <button type="button" id="btnSuccessProceed"
+                                                            class="btn btn-success ladda-button" data-style="zoom-in"
+                                                            data-plugin="laddaProgress" style="display: none;">
+                                                        <span class="ladda-label">PROCEED TO DASHBOARD<i
+                                                                    class="icon wb-arrow-right margin-left-10"
+                                                                    aria-hidden="true"></i></span>
+                                                    </button>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- End Wizard Content -->
+
+                        </div>
+                    </div>
+                    <!-- End Panel Wizard One Form -->
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{# -- STYLES -----------------------------------#}
+    {% block stylesheets %}
+        {#-- page --#}
+        {% set page_css %}
+            {{ css_bundle.css_get_pages(['']) }}
+        {% endset %}
+        {#-- override --#}
+        {% set css_override %}
+            {{ css_bundle.css_get_overrides(['']) }}
+        {% endset %}
+        {#-- plugins --#}
+        {% set css_plugin %}
+            {{ css_bundle.css_get_plugins(['jquery-wizard', 'formValidator']) }}
+        {% endset %}
+        {{ include("JayAdminBundle:Assets:all_admin_css.html.twig") }}
+    {% endblock %}
+
+    {# -- JAVASCRIPT -----------------------------------#}
+    {% block javascripts %}
+        {#-- pages --#}
+        {% set pages_js %}
+            {{ js_bundle.js_get_pages(['admin-create']) }}
+        {% endset %}
+        {#-- plugins --#}
+        {% set plugin_js %}
+            {{ js_bundle.js_get_plugins(['formValidator', 'matchheight', 'ladda', 'ladda-spin', 'jquery-wizard']) }}
+        {% endset %}
+        {#-- scripts --#}
+        {% set scripts_js %}
+            {{ js_bundle.js_get_scripts(['buttons', 'jquery-wizard']) }}
+        {% endset %}
+        {{ include("JayAdminBundle:Assets:all_admin_js.html.twig") }}
+    {% endblock %}

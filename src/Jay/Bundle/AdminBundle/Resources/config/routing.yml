@@ -1,0 +1,35 @@
+jay_payroll_admin_login_path:
+    path:     /login/
+    defaults: { _controller: JayAdminBundle:Authenticate:index }
+
+jay_payroll_admin_do_login_path:
+    path:     /login/auth/
+    defaults: { _controller: JayAdminBundle:Authenticate:login }
+
+jay_payroll_admin_logout_path:
+    path:     /logout
+    defaults: { _controller: JayAdminBundle:Authenticate:logout }
+
+jay_payroll_admin_check_session:
+    path:     /checkSession
+    defaults: { _controller: JayAdminBundle:Authenticate:checkSession }
+
+jay_payroll_admin_home:
+    path:     /admin/
+    defaults: { _controller: JayAdminBundle:Dashboard:index }
+#user route
+jay_payroll_admin_user:
+    path:     /admin/users/
+    defaults: { _controller: JayAdminBundle:User:index }
+
+jay_payroll_admin_user_new:
+    path:     /admin/user/new
+    defaults: { _controller: JayAdminBundle:User:create }
+
+jay_payroll_admin_user_add:
+    path:     /admin/user/add
+    defaults: { _controller: JayAdminBundle:User:addUser }
+
+jay_payroll_admin_setup_account:
+    path:     /admin/forbid/setup/
+    defaults: { _controller: JayAdminBundle:Setup:create }

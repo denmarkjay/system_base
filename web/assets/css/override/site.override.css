@@ -1,0 +1,82 @@
+/**
+ *  GENERAL
+ */
+.display-none {
+    display: none !important;
+}
+/** toast */
+.toast-message {
+    font-family: arial;
+}
+/** menu fold */
+.after-run .site-menubar-fold .site-menu>.site-menu-item>.site-menu-sub {
+    background: #ccc;
+    border-right: 5px solid #ccc;
+}
+.after-run .site-menubar-fold .site-menu-item> a {
+   color: #76838f;
+}
+.after-run .site-menubar-fold .site-menu>.site-menu-item.hover>a, 
+.after-run .site-menubar-fold .site-menu>.site-menu-item:hover>a {
+    color: #333;
+}
+
+/** menu expanded */
+
+.site-menubar  {
+    background: menu;    
+}
+
+.site-menu-item a {
+    color: #76838f;
+}
+
+.site-menu>.site-menu-item.active {
+    background: #ccc;
+    border: 0px;
+}
+
+
+.site-menu>.site-menu-item.active a {
+    background: #ccc;
+    padding: 0 30px !important;
+    line-height: 46px !important;
+}
+
+
+.site-menu>.site-menu-item.active a:hover,
+.site-menu>.site-menu-item.active:hover a {
+    color: #fff;
+}
+
+.site-menu>.site-menu-item.hover>a, 
+.site-menu>.site-menu-item:hover>a {
+    color: #ccc;
+}
+
+.site-menu>.site-menu-item.open {
+    background: menu;
+}
+.site-menu>.site-menu-item.open>a {
+    color: gray;
+}
+
+.site-menu .site-menu-sub .site-menu-item {
+    background: rgba(255,255,255,0.5);
+}
+.site-menu .site-menu-sub .site-menu-item>a {
+    color: #555;
+}
+.site-menu .site-menu-sub .site-menu-item.hover>a, 
+.site-menu .site-menu-sub .site-menu-item:hover>a {
+    color: #ccc;
+}
+
+.site-menubar-footer>a {
+    width: 50%;
+}
+
+/*loader */
+.loader.loader-default {
+    background: none;
+}

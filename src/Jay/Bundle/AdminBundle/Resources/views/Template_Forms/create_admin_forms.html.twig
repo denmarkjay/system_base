@@ -1,0 +1,10 @@
+{% macro input(param) %}
+    <div class="{{ param.col_class|default('col-md-12') }}">
+        <div class="form-group">
+            <label class="control-label" for="{{ param.id|default('') }}">{{ param.label|default('') }}</label>
+            <input type="{{ param.type|default('text') }}"
+                   class="{{ param.class|default('form-control') }}" id="{{ param.id|default('') }}" name="{{ param.name }}"
+                   placeholder="{{ param.placeholder|default('') }}" val=" {{ param.value|default('')|e }}" {{ param.required|default('') }}>
+        </div>
+    </div>
+{% endmacro %}

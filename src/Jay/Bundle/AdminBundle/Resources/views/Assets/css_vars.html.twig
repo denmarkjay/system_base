@@ -1,0 +1,66 @@
+{# -- PLUGINS -- #}
+{% macro css_get_plugins(vars) %}
+{% for css in vars %}
+{#start ifs#}
+{% if css == 'formValidator' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/vendor/formvalidation/formValidation.css') }}">
+{% endif %}
+{% if css == 'ladda' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/vendor/ladda-bootstrap/ladda.css') }}">
+{% endif %}
+{% if css == 'tablesaw' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/vendor/filament-tablesaw/tablesaw.css') }}">
+{% endif %}
+{% if css == 'slide-panel' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/vendor/slidepanel/slidePanel.css') }}">
+{% endif %}
+{% if css == 'sweet-alert' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-sweetalert/sweet-alert.css') }}">
+{% endif %}
+{% if css == 'jquery-wizard' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/vendor/jquery-wizard/jquery-wizard.css') }}"/>
+{% endif %}
+{% if css == 'bootstrap-datepicker' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-datepicker/bootstrap-datepicker.css') }}">
+{% endif %}
+{% if css == 'jt-datepicker' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/vendor/jt-timepicker/jquery-timepicker.css') }}">
+{% endif %}
+{% if css == 'select2' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/vendor/select2/select2.css') }}">
+{% endif %}
+{% if css == 'toastr' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/vendor/toastr/toastr.css') }}">
+{% endif %}
+{#endifs#}
+{% endfor %}
+{% endmacro %}
+
+{# -- PAGES -- #}
+{% macro css_get_pages(vars) %}
+{% for css in vars %}
+{#start ifs#}
+{% if css == 'login' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/css/pages/login.css') }}">
+{% endif %}
+{% if css == 'app-contacts' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/css/apps/contacts.css') }}">
+{% endif %}
+{#endifs#}
+{% endfor %}
+{% endmacro %}
+
+{# -- OVERRIDE -- #}
+{% macro css_get_overrides(vars) %}
+{% for css in vars %}
+{#start ifs#}
+{% if css == 'login' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/css/override/login.override.css') }}">
+{% endif %}
+{% if css == 'pages' or css == 'all' %}
+<link rel="stylesheet" href="{{ asset('assets/css/override/pages.override.css') }}">
+{% endif %}
+{#endifs#}
+{% endfor %}
+{% endmacro %}
+

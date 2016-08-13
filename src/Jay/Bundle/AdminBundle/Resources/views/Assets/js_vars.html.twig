@@ -1,0 +1,104 @@
+{# -- SCRIPTS --------------------------- #}
+{% macro js_get_scripts(vars) %}
+{% for js in vars %}
+{#start ifs#}
+{% if js == 'ladda' or js == 'all' %}
+<script src="{{ asset('assets/js/components/ladda-bootstrap.js') }}"></script>
+{% endif %}
+{% if js == 'buttons' or js == 'all' %}
+<script src="{{ asset('assets/js/components/buttons.js') }}"></script>
+{% endif %}
+{% if js == 'material' or js == 'all' %}
+<script src="{{ asset('assets/js/components/material.js') }}"></script>
+{% endif %}
+{% if js == 'app' or js == 'all' %}
+<script src="{{ asset('assets/js/apps/app.js') }}"></script>
+{% endif %}
+{% if js == 'app-contacts' or js == 'all' %}
+<script src="{{ asset('assets/js/apps/contacts.js') }}"></script>
+{% endif %}
+{% if js == 'sticky-header' or js == 'all' %}
+<script src="{{ asset('assets/js/plugins/sticky-header.js') }}"></script>
+{% endif %}
+{% if js == 'aspaginator' or js == 'all' %}
+<script src="{{ asset('assets/js/components/aspaginator.js') }}"></script>
+{% endif %}
+{% if js == 'jquery-wizard' or js == 'all' %}
+<script src="{{ asset('assets/js/components/jquery-wizard.js') }}"></script>
+{% endif %}
+{% if js == 'bootstrap-datepicker' or js == 'all' %}
+<script src="{{ asset('assets/js/components/bootstrap-datepicker.js') }}"></script>
+{% endif %}
+{% if js == 'jt-timepicker' or js == 'all' %}
+<script src="{{ asset('assets/js/components/jt-timepicker.js') }}"></script>
+{% endif %}
+{% if js == 'select2' or js == 'all' %}
+<script src="{{ asset('assets/js/components/select2.js') }}"></script>
+{% endif %}
+{% if js == 'toastr' or js == 'all' %}
+<script src="{{ asset('assets/js/components/toastr.js') }}"></script>
+{% endif %}
+{#end ifs#}
+{% endfor %}
+{% endmacro %}
+
+{# -- PLUGINS --------------------------- #}
+{% macro js_get_plugins(vars) %}
+{% for js in vars %}
+{#start ifs#}
+{% if js == 'formValidator' or js == 'all' %}
+<script src="{{ asset('assets/vendor/formvalidation/formValidation.js') }}"></script>
+<script src="{{ asset('assets/vendor/formvalidation/framework/bootstrap.js') }}"></script>
+{% endif %}
+{% if js == 'ladda' or js == 'all' %}
+<script src="{{ asset('assets/vendor/ladda-bootstrap/ladda.js') }}"></script>
+{% endif %}
+{% if js == 'ladda-spin' or js == 'all' %}
+<script src="{{ asset('assets/vendor/ladda-bootstrap/spin.js') }}"></script>
+{% endif %}
+{% if js == 'tablesaw' or js == 'all' %}
+<script src="{{ asset('assets/vendor/filament-tablesaw/tablesaw.js') }}"></script>
+{% endif %}
+{% if js == 'jquery-aspaginator' or js == 'all' %}
+<script src="{{ asset('assets/vendor/aspaginator/jquery.asPaginator.min.js') }}"></script>
+{% endif %}
+{% if js == 'sweet-alert' or js == 'all' %}
+<script src="{{ asset('assets/vendor/bootstrap-sweetalert/sweet-alert.js') }}"></script>
+{% endif %}
+{% if js == 'matchheight' or js == 'all' %}
+<script src="{{ asset('assets/vendor/matchheight/jquery.matchHeight-min.js') }}"></script>
+{% endif %}
+{% if js == 'jquery-wizard' or js == 'all' %}
+<script src="{{ asset('assets/vendor/jquery-wizard/jquery-wizard.js') }}"></script>
+{% endif %}
+{% if js == 'bootstrap-datepicker' or js == 'all' %}
+<script src="{{ asset('assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js') }}"></script>
+{% endif %}
+{% if js == 'jt-timepicker' or js == 'all' %}
+<script src="{{ asset('assets/vendor/jt-timepicker/jquery.timepicker.min.js') }}"></script>
+{% endif %}
+{% if js == 'select2' or js == 'all' %}
+<script src="{{ asset('assets/vendor/select2/select2.min.js') }}"></script>
+{% endif %}
+{% if js == 'toastr' or js == 'all' %}
+<script src="{{ asset('assets/vendor/toastr/toastr.js') }}"></script>
+{% endif %}
+{#end ifs#}
+{% endfor %}
+{% endmacro %}
+
+{# -- PAGES --------------------------- #}
+{% macro js_get_pages(vars) %}
+{% for js in vars %}
+{#start ifs#}{#end ifs#}
+{% if js == 'login' or js == 'all' %}
+<script src="{{ asset('assets/js/pages/login.js') }}"></script>
+{% endif %}
+{% if js == 'admin-create' or js == 'all' %}
+<script src="{{ asset('assets/js/admin/admin_create.js') }}"></script>
+{% endif %}
+{% if js == 'form-validate' or js == 'all' %}
+<script src="{{ asset('assets/js/admin/form_validate.js') }}"></script>
+{% endif %}
+{% endfor %}
+{% endmacro %}

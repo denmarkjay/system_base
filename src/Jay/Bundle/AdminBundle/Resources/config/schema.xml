@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="Jay\Bundle\AdminBundle\Model" defaultIdMethod="native">
+    <!-- Company -->
+    <table name="company">
+        <column name="company_id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="company_key" type="varchar" size="40" />
+        <column name="company_name" type="varchar" size="100"/>
+        <column name="company_email" type="varchar" size="200"/>
+        <column name="company_address" type="varchar" size="500"/>
+        <column name="company_status" type="varchar" size="10"/>
+        <column name="company_added_by" type="integer"/>
+        <column name="company_date_added" type="timestamp"/>
+    </table>
+
+    <!-- User Level as ul -->
+    <table name="user_level">
+        <column name="ul_id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="ul_role" type="varchar" size="20"/>
+        <column name="ul_name" type="varchar" size="40"/>
+        <column name="ul_status" type="varchar" size="10"/>
+        <column name="ul_added_by" type="integer"/>
+        <column name="ul_date_added" type="timestamp"/>
+    </table>
+
+    <!-- User -->
+    <table name="user">
+        <column name="user_id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="user_fname" type="varchar" size="50"/>
+        <column name="user_mname" type="varchar" size="50"/>
+        <column name="user_lname" type="varchar" size="50"/>
+        <column name="user_login" type="varchar" size="20"/>
+        <column name="user_password" type="varchar" size="40"/>
+        <column name="user_email" type="varchar" size="200"/>
+        <column name="user_gender" type="varchar" size="6"/>
+        <column name="user_birth_date" type="date"/>
+        <column name="user_age" type="integer"/>
+        <column name="user_phone" type="varchar" size="100"/>
+        <column name="user_company_key" type="varchar" size="40" required="true" />
+        <column name="user_role" type="varchar" size="20" required="true" />
+        <column name="user_status" type="varchar" size="10"/>
+        <column name="user_added_by" type="integer"/>
+        <column name="user_date_added" type="timestamp"/>
+        <column name="user_date_lastlogin" type="timestamp"/>
+        <!-- foreign keys -->
+        <foreign-key foreignTable="company">
+            <reference local="user_company_key" foreign="company_key"/>
+        </foreign-key>
+        <foreign-key foreignTable="user_level">
+            <reference local="user_role" foreign="ul_role"/>
+        </foreign-key>
+    </table>
+
+    <!-- User Login as userlog-->
+    <table name="user_login">
+        <column name="userlog_id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="userlog_uid" type="integer"/>
+        <column name="userlog_date" type="timestamp"/>
+        <column name="userlog_ip" type="varchar" size="40"/>
+        <!-- foreign keys -->
+        <foreign-key foreignTable="user">
+            <reference local="userlog_uid" foreign="user_id"/>
+        </foreign-key>
+    </table>
+
+</database>
