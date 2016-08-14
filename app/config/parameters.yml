@@ -1,0 +1,23 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_pgsql
+
+#local
+#    database_host: 127.0.0.1
+#    database_port: null
+#    database_name: proj_payroll_system
+#    database_user: root
+#    database_password: null
+
+    database_host: MYSQL5009.myASP.NET
+    database_port: 3306
+    database_name: db_a0b771_ims
+    database_user: a0b771_ims
+    database_password: Password@123
+
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt
