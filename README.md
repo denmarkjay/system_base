@@ -56,8 +56,28 @@ It comes pre-configured with the following bundles:
   * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
     integration
 
+Database Account
+----------------
 All libraries and bundles included in the Symfony Standard Edition are
 released under the MIT or BSD license.
+
+our Account Details
+
+Your account is now active.
+Main Hosting Details
+Control panel username
+ltm_18720677
+Control panel password	**********
+Control panel URL
+cpanel.ultimatefreehost.in
+MySQL username
+ltm_18720677
+MySQL password: **********
+MySQL hostname: sql303.ultimatefreehost.in
+FTP username: ltm_18720677
+FTP password: **********
+FTP host name:	ftp.ultimatefreehost.in
+Your Website URL's Home page http://ims-djm.ultimatefreehost.in
 
 Enjoy!
 
