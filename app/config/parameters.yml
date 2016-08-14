@@ -1,6 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_driver: mysql
+    database_driver: pdo_mysql
 
 #local
 #    database_host: 127.0.0.1
