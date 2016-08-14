@@ -1,6 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_driver: MySQL ODBC 5.1 Driver
+    database_driver: mysql
 
 #local
 #    database_host: 127.0.0.1
